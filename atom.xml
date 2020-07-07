@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://okwzh.cn/"/>
-  <updated>2020-07-06T10:37:49.702Z</updated>
+  <updated>2020-07-07T12:01:59.020Z</updated>
   <id>https://okwzh.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>王者荣耀</title>
+    <link href="https://okwzh.cn/2020/07/07/Photos/wz/"/>
+    <id>https://okwzh.cn/2020/07/07/Photos/wz/</id>
+    <published>2020-07-07T11:06:29.933Z</published>
+    <updated>2020-07-07T12:01:59.020Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>&#39;第一个页面&#39;</title>
@@ -57,11 +80,359 @@
   </entry>
   
   <entry>
-    <title>&#39;递归算法&#39;</title>
-    <link href="https://okwzh.cn/2020/06/03/Blog/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/"/>
-    <id>https://okwzh.cn/2020/06/03/Blog/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/</id>
-    <published>2020-06-03T01:39:25.000Z</published>
-    <updated>2020-07-06T10:37:43.735Z</updated>
+    <title>&#39;在线客服系统-基于flask+vue+socket.io实现在线客服系统&#39;</title>
+    <link href="https://okwzh.cn/2020/06/28/Blog/%E5%9C%A8%E7%BA%BF%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F-%E5%9F%BA%E4%BA%8Eflask-vue%E9%9B%86%E6%88%90%E9%A1%B9%E7%9B%AE/"/>
+    <id>https://okwzh.cn/2020/06/28/Blog/%E5%9C%A8%E7%BA%BF%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F-%E5%9F%BA%E4%BA%8Eflask-vue%E9%9B%86%E6%88%90%E9%A1%B9%E7%9B%AE/</id>
+    <published>2020-06-28T08:52:56.000Z</published>
+    <updated>2020-07-07T00:39:36.835Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;socket-io介绍&quot;&gt;&lt;a href=&quot;#socket-io介绍&quot; class=&quot;headerlink&quot; title=&quot;socket.io介绍&quot;&gt;&lt;/a&gt;socket.io介绍&lt;/h3&gt;&lt;p&gt;Socket.IO 就是一个封装了 Websocket、基于 Node 的 JavaScript 框架，包含 client 的 JavaScript 和 server 的 Node（现在也支持python,go lang等语言）。其屏蔽了所有底层细节，让顶层调用非常简单，另外，Socket.IO 还有一个非常重要的好处。其不仅支持 WebSocket，还支持许多种轮询机制以及其他实时通信方式，并封装了通用的接口。这些方式包含 Adobe Flash Socket、Ajax 长轮询、Ajax multipart streaming 、持久 Iframe、JSONP 轮询等。
+    
+    </summary>
+    
+    
+      <category term="flask" scheme="https://okwzh.cn/categories/flask/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="flask" scheme="https://okwzh.cn/tags/flask/"/>
+    
+      <category term="websocket" scheme="https://okwzh.cn/tags/websocket/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;flask第二弹——cookie和session&#39;</title>
+    <link href="https://okwzh.cn/2020/06/26/Blog/flask%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%94%E2%80%94cookie%E5%92%8Csession/"/>
+    <id>https://okwzh.cn/2020/06/26/Blog/flask%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%94%E2%80%94cookie%E5%92%8Csession/</id>
+    <published>2020-06-26T09:56:48.000Z</published>
+    <updated>2020-06-26T10:01:31.148Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="flask" scheme="https://okwzh.cn/categories/flask/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="flask" scheme="https://okwzh.cn/tags/flask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;flask第一弹——flask安装及入门&#39;</title>
+    <link href="https://okwzh.cn/2020/06/26/Blog/flask%E7%AC%AC%E4%B8%80%E5%BC%B9%E2%80%94%E2%80%94flask%E5%AE%89%E8%A3%85%E5%8F%8A%E5%85%A5%E9%97%A8/"/>
+    <id>https://okwzh.cn/2020/06/26/Blog/flask%E7%AC%AC%E4%B8%80%E5%BC%B9%E2%80%94%E2%80%94flask%E5%AE%89%E8%A3%85%E5%8F%8A%E5%85%A5%E9%97%A8/</id>
+    <published>2020-06-26T02:36:10.000Z</published>
+    <updated>2020-07-07T10:51:17.362Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="flask" scheme="https://okwzh.cn/categories/flask/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="flask" scheme="https://okwzh.cn/tags/flask/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;python高阶函数&#39;</title>
+    <link href="https://okwzh.cn/2020/06/22/Blog/python%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/"/>
+    <id>https://okwzh.cn/2020/06/22/Blog/python%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0/</id>
+    <published>2020-06-22T01:25:12.000Z</published>
+    <updated>2020-07-07T09:00:44.458Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;结合python实现支付宝退款功能&#39;</title>
+    <link href="https://okwzh.cn/2020/06/20/Blog/%E7%BB%93%E5%90%88python%E5%AE%9E%E7%8E%B0%E6%94%AF%E4%BB%98%E5%AE%9D%E9%80%80%E6%AC%BE%E5%8A%9F%E8%83%BD/"/>
+    <id>https://okwzh.cn/2020/06/20/Blog/%E7%BB%93%E5%90%88python%E5%AE%9E%E7%8E%B0%E6%94%AF%E4%BB%98%E5%AE%9D%E9%80%80%E6%AC%BE%E5%8A%9F%E8%83%BD/</id>
+    <published>2020-06-20T09:58:39.000Z</published>
+    <updated>2020-07-07T09:05:34.692Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="支付" scheme="https://okwzh.cn/categories/%E6%94%AF%E4%BB%98/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
+    
+      <category term="支付" scheme="https://okwzh.cn/tags/%E6%94%AF%E4%BB%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;使用python结合钉钉配置开发自定义机器人&#39;</title>
+    <link href="https://okwzh.cn/2020/06/20/Blog/%E4%BD%BF%E7%94%A8python%E7%BB%93%E5%90%88%E9%92%89%E9%92%89%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%BA%E5%99%A8%E4%BA%BA/"/>
+    <id>https://okwzh.cn/2020/06/20/Blog/%E4%BD%BF%E7%94%A8python%E7%BB%93%E5%90%88%E9%92%89%E9%92%89%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%BA%E5%99%A8%E4%BA%BA/</id>
+    <published>2020-06-20T08:56:39.000Z</published>
+    <updated>2020-07-07T09:07:03.527Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
+    
+      <category term="钉钉" scheme="https://okwzh.cn/tags/%E9%92%89%E9%92%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;关于celery不执行定时任务的问题&#39;</title>
+    <link href="https://okwzh.cn/2020/06/19/Blog/%E5%85%B3%E4%BA%8Ecelery%E4%B8%8D%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://okwzh.cn/2020/06/19/Blog/%E5%85%B3%E4%BA%8Ecelery%E4%B8%8D%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2020-06-19T13:43:31.000Z</published>
+    <updated>2020-07-07T09:04:00.487Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="celery" scheme="https://okwzh.cn/categories/celery/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
+    
+      <category term="celery" scheme="https://okwzh.cn/tags/celery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;hexo博客美化二&#39;</title>
+    <link href="https://okwzh.cn/2020/06/17/Blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%BA%8C/"/>
+    <id>https://okwzh.cn/2020/06/17/Blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%BA%8C/</id>
+    <published>2020-06-17T13:59:40.000Z</published>
+    <updated>2020-07-07T08:54:57.069Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://okwzh.cn/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://okwzh.cn/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;paypal跨境支付&#39;</title>
+    <link href="https://okwzh.cn/2020/06/17/Blog/paypal%E8%B7%A8%E5%A2%83%E6%94%AF%E4%BB%98/"/>
+    <id>https://okwzh.cn/2020/06/17/Blog/paypal%E8%B7%A8%E5%A2%83%E6%94%AF%E4%BB%98/</id>
+    <published>2020-06-17T02:00:58.000Z</published>
+    <updated>2020-07-07T09:00:07.599Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="支付" scheme="https://okwzh.cn/categories/%E6%94%AF%E4%BB%98/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
+    
+      <category term="支付" scheme="https://okwzh.cn/tags/%E6%94%AF%E4%BB%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;hexo博客美化一&#39;</title>
+    <link href="https://okwzh.cn/2020/06/16/Blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B8%80/"/>
+    <id>https://okwzh.cn/2020/06/16/Blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B8%80/</id>
+    <published>2020-06-16T13:31:29.000Z</published>
+    <updated>2020-07-07T08:55:43.380Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://okwzh.cn/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://okwzh.cn/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;结合js做md5加密&#39;</title>
+    <link href="https://okwzh.cn/2020/06/16/Blog/%E7%BB%93%E5%90%88js%E5%81%9Amd5%E5%8A%A0%E5%AF%86/"/>
+    <id>https://okwzh.cn/2020/06/16/Blog/%E7%BB%93%E5%90%88js%E5%81%9Amd5%E5%8A%A0%E5%AF%86/</id>
+    <published>2020-06-16T09:48:47.000Z</published>
+    <updated>2020-07-07T09:05:23.584Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="vue" scheme="https://okwzh.cn/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;结合python实现支付宝支付功能&#39;</title>
+    <link href="https://okwzh.cn/2020/06/16/Blog/%E7%BB%93%E5%90%88python%E5%AE%9E%E7%8E%B0%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/"/>
+    <id>https://okwzh.cn/2020/06/16/Blog/%E7%BB%93%E5%90%88python%E5%AE%9E%E7%8E%B0%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/</id>
+    <published>2020-06-16T08:39:30.000Z</published>
+    <updated>2020-07-07T09:05:53.252Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="支付" scheme="https://okwzh.cn/categories/%E6%94%AF%E4%BB%98/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
+    
+      <category term="支付" scheme="https://okwzh.cn/tags/%E6%94%AF%E4%BB%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;分布式ID雪花算法(snowflake)&#39;</title>
+    <link href="https://okwzh.cn/2020/06/14/Blog/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95-snowflake/"/>
+    <id>https://okwzh.cn/2020/06/14/Blog/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95-snowflake/</id>
+    <published>2020-06-14T09:43:19.000Z</published>
+    <updated>2020-07-07T09:09:04.645Z</updated>
     
     <summary type="html">
     
@@ -81,7 +452,129 @@
     
       <category term="python" scheme="https://okwzh.cn/tags/python/"/>
     
+      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
+    
       <category term="算法" scheme="https://okwzh.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;关于js数字过长出现的精度丢失问题&#39;</title>
+    <link href="https://okwzh.cn/2020/06/14/Blog/%E5%85%B3%E4%BA%8Ejs%E6%95%B0%E5%AD%97%E8%BF%87%E9%95%BF%E5%87%BA%E7%8E%B0%E7%9A%84%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/"/>
+    <id>https://okwzh.cn/2020/06/14/Blog/%E5%85%B3%E4%BA%8Ejs%E6%95%B0%E5%AD%97%E8%BF%87%E9%95%BF%E5%87%BA%E7%8E%B0%E7%9A%84%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/</id>
+    <published>2020-06-14T07:37:27.000Z</published>
+    <updated>2020-07-07T09:04:34.367Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://okwzh.cn/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://okwzh.cn/tags/vue/"/>
+    
+      <category term="js" scheme="https://okwzh.cn/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;uuid生成唯一id&#39;</title>
+    <link href="https://okwzh.cn/2020/06/14/Blog/uuid%E7%94%9F%E6%88%90%E5%94%AF%E4%B8%80id/"/>
+    <id>https://okwzh.cn/2020/06/14/Blog/uuid%E7%94%9F%E6%88%90%E5%94%AF%E4%B8%80id/</id>
+    <published>2020-06-14T07:36:27.000Z</published>
+    <updated>2020-07-07T09:02:13.283Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;使用又拍云及拖拽上传&#39;</title>
+    <link href="https://okwzh.cn/2020/06/09/Blog/day10-vue+django+python%E5%AE%8C%E6%88%90%E5%8F%88%E6%8B%8D%E4%BA%91%E5%AE%9E%E7%8E%B0%E6%8B%96%E6%8B%BD%E5%AD%98%E5%82%A8/"/>
+    <id>https://okwzh.cn/2020/06/09/Blog/day10-vue+django+python%E5%AE%8C%E6%88%90%E5%8F%88%E6%8B%8D%E4%BA%91%E5%AE%9E%E7%8E%B0%E6%8B%96%E6%8B%BD%E5%AD%98%E5%82%A8/</id>
+    <published>2020-06-09T02:28:35.000Z</published>
+    <updated>2020-07-07T08:50:50.909Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="vue" scheme="https://okwzh.cn/tags/vue/"/>
+    
+      <category term="又拍云" scheme="https://okwzh.cn/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;结合又拍云实现多线程异步分块上传&#39;</title>
+    <link href="https://okwzh.cn/2020/06/09/Blog/%E7%BB%93%E5%90%88%E5%8F%88%E6%8B%8D%E4%BA%91%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%88%86%E5%9D%97%E4%B8%8A%E4%BC%A0/"/>
+    <id>https://okwzh.cn/2020/06/09/Blog/%E7%BB%93%E5%90%88%E5%8F%88%E6%8B%8D%E4%BA%91%E5%AE%9E%E7%8E%B0%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%BC%82%E6%AD%A5%E5%88%86%E5%9D%97%E4%B8%8A%E4%BC%A0/</id>
+    <published>2020-06-09T02:28:35.000Z</published>
+    <updated>2020-07-07T09:12:30.502Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="又拍云" scheme="https://okwzh.cn/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/"/>
+    
+      <category term="多线程" scheme="https://okwzh.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="异步" scheme="https://okwzh.cn/tags/%E5%BC%82%E6%AD%A5/"/>
     
   </entry>
   
