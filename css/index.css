@@ -235,6 +235,7 @@ button {
   bottom: 0;
   left: 0;
   z-index: -1;
+  border-radius: 5px;
   background: #ff7242;
   content: '';
   -webkit-transition-timing-function: ease-out;
@@ -2030,6 +2031,7 @@ blockquote footer cite:before {
   background-color: #49b1f5;
   color: #fff;
   line-height: 1.6rem;
+  border-radius: 5px;
 }
 #aside_content .card-info #bookmark-it span {
   padding-left: 0.5rem;
@@ -2608,14 +2610,10 @@ blockquote footer cite:before {
   background-size: cover;
 }
 #footer-wrap {
-  position: absolute;
-  padding: 1.2rem 1rem 1.4rem;
+  position: relative;
+  padding: 2rem 1rem;
   color: #eee;
   text-align: center;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
 }
 #footer-wrap a {
   color: #eee;
@@ -4275,7 +4273,7 @@ _:future,
   line-height: 0.3rem;
 }
 a {
-  color: #99a9bf;
+  color: #09c;
   text-decoration: none;
   word-wrap: break-word;
   -webkit-transition: all 0.2s;
