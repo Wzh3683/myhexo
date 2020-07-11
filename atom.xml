@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://okwzh.cn/"/>
-  <updated>2020-07-10T11:02:56.703Z</updated>
+  <updated>2020-07-11T14:00:09.775Z</updated>
   <id>https://okwzh.cn/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>&#39;三次握手与四次挥手&#39;</title>
+    <link href="https://okwzh.cn/2020/07/11/Blog/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8E%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/"/>
+    <id>https://okwzh.cn/2020/07/11/Blog/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8E%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</id>
+    <published>2020-07-11T12:47:18.000Z</published>
+    <updated>2020-07-11T14:00:09.775Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="TCP/IP协议" scheme="https://okwzh.cn/categories/TCP-IP%E5%8D%8F%E8%AE%AE/"/>
+    
+    
+      <category term="协议" scheme="https://okwzh.cn/tags/%E5%8D%8F%E8%AE%AE/"/>
+    
+      <category term="tcp" scheme="https://okwzh.cn/tags/tcp/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&#39;Vim使用命令&#39;</title>
     <link href="https://okwzh.cn/2020/07/10/Blog/Vim%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
     <id>https://okwzh.cn/2020/07/10/Blog/Vim%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/</id>
     <published>2020-07-10T08:47:01.000Z</published>
-    <updated>2020-07-10T11:02:56.703Z</updated>
+    <updated>2020-07-11T00:34:57.205Z</updated>
     
     <summary type="html">
     
@@ -542,37 +571,6 @@
     
     
       <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;使用又拍云及拖拽上传&#39;</title>
-    <link href="https://okwzh.cn/2020/06/09/Blog/day10-vue+django+python%E5%AE%8C%E6%88%90%E5%8F%88%E6%8B%8D%E4%BA%91%E5%AE%9E%E7%8E%B0%E6%8B%96%E6%8B%BD%E5%AD%98%E5%82%A8/"/>
-    <id>https://okwzh.cn/2020/06/09/Blog/day10-vue+django+python%E5%AE%8C%E6%88%90%E5%8F%88%E6%8B%8D%E4%BA%91%E5%AE%9E%E7%8E%B0%E6%8B%96%E6%8B%BD%E5%AD%98%E5%82%A8/</id>
-    <published>2020-06-09T02:28:35.000Z</published>
-    <updated>2020-07-07T08:50:50.909Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
-      <category term="vue" scheme="https://okwzh.cn/tags/vue/"/>
-    
-      <category term="又拍云" scheme="https://okwzh.cn/tags/%E5%8F%88%E6%8B%8D%E4%BA%91/"/>
     
   </entry>
   
