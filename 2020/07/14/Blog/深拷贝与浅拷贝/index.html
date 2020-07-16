@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'深拷贝与浅拷贝' | WZH's blog</title><meta name="description" content="COPY模块作用：copy模块用于对象的拷贝操作。 该模块提供了两个主要的方法：copy.copy()和copy.deepcopy(),分别代表的浅拷贝和深拷贝 copy模块之浅拷贝浅拷贝：不管多么复杂的数据结构，浅拷贝只会拷贝第一层&#x2F;表层&#x2F;顶层。浅拷贝是对一个对象的顶层的拷贝。通俗的理解就是：拷贝了引用，并没有拷贝内容。              注意点：    浅拷贝对不可变类型和可变类型的c"><meta name="keywords" content="python"><meta name="author" content="Mr.Wang,okwzh3683@gmail.com"><meta name="copyright" content="Mr.Wang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/Hexo%E4%B8%BB%E9%A2%98%E5%9B%BE%E7%89%87/timg.jpg"><link rel="canonical" href="https://okwzh.cn/2020/07/14/Blog/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="'深拷贝与浅拷贝'"><meta property="og:url" content="https://okwzh.cn/2020/07/14/Blog/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/"><meta property="og:site_name" content="WZH's blog"><meta property="og:description" content="COPY模块作用：copy模块用于对象的拷贝操作。 该模块提供了两个主要的方法：copy.copy()和copy.deepcopy(),分别代表的浅拷贝和深拷贝 copy模块之浅拷贝浅拷贝：不管多么复杂的数据结构，浅拷贝只会拷贝第一层&#x2F;表层&#x2F;顶层。浅拷贝是对一个对象的顶层的拷贝。通俗的理解就是：拷贝了引用，并没有拷贝内容。              注意点：    浅拷贝对不可变类型和可变类型的c"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-07-14T13:04:23.000Z"><meta property="article:modified_time" content="2020-07-14T14:11:20.066Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="prev" title="'pymongo的使用'" href="https://okwzh.cn/2020/07/14/Blog/pymongo%E7%9A%84%E4%BD%BF%E7%94%A8/"><link rel="next" title="'mongodb的安装与增删改查'" href="https://okwzh.cn/2020/07/14/Blog/mongodb%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-center"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true,
+  postUpdate: '2020-07-14 22:11:20'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/shubiao.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/iconfont.min.css"><link rel="stylesheet" href="/css/iconfont1.css"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/Hexo%E4%B8%BB%E9%A2%98%E5%9B%BE%E7%89%87/log.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">52</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">22</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">12</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-camera"></i><span> 照片墙</span></a></li><li><a class="site-page" href="https://www.itrhx.com/box/" target="_blank" rel="noopener"><i class="fa-fw fas fa-briefcase"></i><span> 百宝箱</span></a></li></ul></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#COPY模块"><span class="toc-number">1.</span> <span class="toc-text">COPY模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#copy模块之浅拷贝"><span class="toc-number">2.</span> <span class="toc-text">copy模块之浅拷贝</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#浅拷贝需要分三种情况来讨论："><span class="toc-number">2.1.</span> <span class="toc-text">浅拷贝需要分三种情况来讨论：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#copy模块之深拷贝"><span class="toc-number">3.</span> <span class="toc-text">copy模块之深拷贝</span></a></li></ol></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">WZH's blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-camera"></i><span> 照片墙</span></a></li><li><a class="site-page" href="https://www.itrhx.com/box/" target="_blank" rel="noopener"><i class="fa-fw fas fa-briefcase"></i><span> 百宝箱</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">'深拷贝与浅拷贝'</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-07-14 21:04:23"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-07-14</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-07-14 22:11:20"><i class="fas fa-history fa-fw"></i> 更新于 2020-07-14</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">651</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 2 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="COPY模块"><a href="#COPY模块" class="headerlink" title="COPY模块"></a>COPY模块</h3><p>作用：copy模块用于对象的拷贝操作。</p>
+<p>该模块提供了两个主要的方法：copy.copy()和copy.deepcopy(),分别代表的浅拷贝和深拷贝</p>
+<h3 id="copy模块之浅拷贝"><a href="#copy模块之浅拷贝" class="headerlink" title="copy模块之浅拷贝"></a>copy模块之浅拷贝</h3><p>浅拷贝：不管多么复杂的数据结构，浅拷贝只会拷贝第一层/表层/顶层。<br>浅拷贝是对一个对象的顶层的拷贝。<br>通俗的理解就是：拷贝了引用，并没有拷贝内容。</p>
+<div class="note info">
+            <p>注意点：<br>    浅拷贝对不可变类型和可变类型的copy不同<br>    copy.copy对于可变类型，会进行浅拷贝<br>    copy.copy对于不可变类型，不会拷贝，仅仅是指向</p>
+          </div>
+
+<p><img src="/img/python/copy.jpg" alt=""></p>
+<h4 id="浅拷贝需要分三种情况来讨论："><a href="#浅拷贝需要分三种情况来讨论：" class="headerlink" title="浅拷贝需要分三种情况来讨论："></a>浅拷贝需要分三种情况来讨论：</h4><p>1.拷贝不可变对象：只是增加一个指向原对象的引用，改变会互相影响。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a = (<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 改变一方，另一方也改变</span></span><br><span class="line">b[<span class="number">2</span>].append(<span class="number">5</span>)</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<p>2.拷贝可变对象(一层结构)：产生新的对象，开辟新的内存空间，改变互不影响。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(b)  <span class="comment">#[1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看两者的内存地址，不同，开辟了新的内存空间</span></span><br><span class="line">print(id(a))  <span class="comment">#2661167251848</span></span><br><span class="line">print(id(b))  <span class="comment">#2661167251784</span></span><br><span class="line">print(a <span class="keyword">is</span> b) <span class="comment">#False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 改变了一方，另一方关我卵事</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]    </span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">b.append(<span class="number">4</span>)</span><br><span class="line">print(b) <span class="comment">#[1, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line">a.append(<span class="number">5</span>)</span><br><span class="line">print(a) <span class="comment">#[1, 2, 3, 5]</span></span><br></pre></td></tr></table></figure>
+
+<p>3.拷贝可变对象(多层结构)：产生新的对象，开辟新的内存空间，不改变包含的子对象则互不影响、改变包含的子对象则互相影响。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b = copy.copy(a)</span><br><span class="line">print(b)  <span class="comment"># [1, 2, [3, 4]]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看两者的内存地址，不同，开辟了新的内存空间</span></span><br><span class="line">print(id(b)) <span class="comment"># 1902708310280</span></span><br><span class="line"></span><br><span class="line">print(id(a)) <span class="comment"># 1902708310408</span></span><br><span class="line">print(a <span class="keyword">is</span> b) <span class="comment">#False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># # 1.没有对包含的子对象进行修改，另一方关我卵事</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]    </span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b.append(<span class="number">5</span>)</span><br><span class="line">print(b) <span class="comment">#[1, 2, [3, 4], 5]</span></span><br><span class="line">a.append(<span class="number">6</span>)</span><br><span class="line">print(a) <span class="comment">#[1, 2, [3, 4], 6]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.对包含的子对象进行修改，另一方也随之改变</span></span><br><span class="line">a = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]    </span><br><span class="line">b = [<span class="number">1</span>, <span class="number">2</span>, [<span class="number">3</span>, <span class="number">4</span>]]</span><br><span class="line">b[<span class="number">2</span>].append(<span class="number">5</span>)</span><br><span class="line">print(b) <span class="comment"># [1, 2, [3, 4, 5]]</span></span><br><span class="line">a[<span class="number">2</span>].append(<span class="number">6</span>)</span><br><span class="line">print(a) <span class="comment"># [1, 2, [3, 4, 6]]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="copy模块之深拷贝"><a href="#copy模块之深拷贝" class="headerlink" title="copy模块之深拷贝"></a>copy模块之深拷贝</h3><p>深拷贝：完全复制原变量的所有数据（递归性质的拷贝），在内存中生成一套完全一样的内容，我们对这两个变量中的一个进行任意修改都不会影响另一个变量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"></span><br><span class="line">a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">b = copy.deepcopy(a)</span><br><span class="line">print(id(a))  </span><br><span class="line">print(id(b))</span><br><span class="line">print(a <span class="keyword">is</span> b)</span><br><span class="line"></span><br><span class="line"><span class="comment">#2082974974344</span></span><br><span class="line"><span class="comment">#2082974974280</span></span><br><span class="line"><span class="comment">#False</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/python/deepcopy.jpg" alt=""></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:okwzh3683@gmail.com">Mr.Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://okwzh.cn/2020/07/14/Blog/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/">https://okwzh.cn/2020/07/14/Blog/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://okwzh.cn" target="_blank">WZH's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/python/">python</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button" type="button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechat.jpg" alt="wechat" onclick="window.open('/img/wechat.jpg')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="alipay" onclick="window.open('/img/alipay.jpg')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><br><br><html><body><div id="wpac-rating" align="center"></div><script type="text/javascript">wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 26102});  //- 这里将xxxxx改成自己的id
+(function() {
+if ('WIDGETPACK_LOADED' in window) return;
+WIDGETPACK_LOADED = true;
+var mc = document.createElement('script');
+mc.type = 'text/javascript';
+mc.async = true;
+mc.src = 'https://embed.widgetpack.com/widget.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+//- 下面的那行小字 如果你不需要可以把17~21行注释掉</script><div id="copy" align="center">ღ喜欢记得五星好评哦~</div></body></html><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/14/Blog/pymongo%E7%9A%84%E4%BD%BF%E7%94%A8/"><img class="prev-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">'pymongo的使用'</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/14/Blog/mongodb%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"><img class="next-cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">'mongodb的安装与增删改查'</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/06/08/Blog/HTTP协议和HTTPS协议/" title="'HTTP协议和HTTPS协议'"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-08</div><div class="relatedPosts_title">'HTTP协议和HTTPS协议'</div></div></a></div><div class="relatedPosts_item"><a href="/2020/06/01/Blog/celery异步的使用/" title="'celery异步的使用'"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-01</div><div class="relatedPosts_title">'celery异步的使用'</div></div></a></div><div class="relatedPosts_item"><a href="/2020/06/01/Blog/celery的定时任务/" title="'schedule的定时任务'"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-01</div><div class="relatedPosts_title">'schedule的定时任务'</div></div></a></div><div class="relatedPosts_item"><a href="/2020/04/21/Blog/day02环境变量/" title="环境变量的配置"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-04-21</div><div class="relatedPosts_title">环境变量的配置</div></div></a></div><div class="relatedPosts_item"><a href="/2020/06/06/Blog/day08-第三方登录-gitee登录/" title="'第三方登录-gitee登录'"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-06</div><div class="relatedPosts_title">'第三方登录-gitee登录'</div></div></a></div><div class="relatedPosts_item"><a href="/2020/04/28/Blog/day08-第三方登录-微博登录/" title="第三方登录-微博登录"><img class="relatedPosts_cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-04-28</div><div class="relatedPosts_title">第三方登录-微博登录</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div class="comments-items-1" data-name="Valine"><div class="vcomment" id="vcomment"></div><script>function loadvaline () {  
+  var requestSetting = function (from,set) {
+    var from = from
+    var setting = set.split(',').filter(function(item){
+    return from.indexOf(item) > -1
+    });
+    setting = setting.length == 0 ? from :setting;
+    return setting
+  }
+
+  var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+  var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+  function initValine () {
+    window.valine = new Valine({
+      el:'#vcomment',
+      appId: 'NXH07QqogzUxgT3WQU064j9D-gzGzoHsz',
+      appKey: 'f5oGTt9f5pG96B9r6uTngiGh',
+      placeholder: '记得留下你的暱称和邮箱....可以快速收到回復',
+      avatar: 'monsterid',
+      meta: guestInfo,
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      requiredFields: requiredFields
+    });
+  }
+  loadScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || false) {
+  window.addEventListener('load', loadvaline)
+}
+else {
+  function loadOtherComment () {
+    loadvaline()
+  }
+}</script></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Mr.Wang</div></div><head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="WZH's blog" type="application/atom+xml">
+</head><div class="container" id="jsi-flying-fish-container"></div><script src="/js/fish.js"></script><style>@media only screen and (max-width: 767px){
+#sidebar_search_box input[type=text]{width:calc(100% - 24px)}
+}</style></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="/js/third-party/click_heart.js"></script><script src="/js/search/local-search.js"></script><script src="/js/calendar.js"></script><script src="/js/languages.js"></script><script src="/js/fish.js"></script><script src="/js/magic.js"></script><script>var endLoading = function () {
+  document.body.style.overflow = 'auto';
+  document.getElementById('loading-box').classList.add("loaded")
+}
+window.addEventListener('load',endLoading)</script></body></html>

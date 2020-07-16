@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://okwzh.cn/"/>
-  <updated>2020-07-13T02:54:23.888Z</updated>
+  <updated>2020-07-15T09:08:32.943Z</updated>
   <id>https://okwzh.cn/</id>
   
   <author>
@@ -17,11 +17,216 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>&#39;mongodb的安装和卸载&#39;</title>
+    <link href="https://okwzh.cn/2020/07/15/Blog/mongodb%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/"/>
+    <id>https://okwzh.cn/2020/07/15/Blog/mongodb%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E5%8D%B8%E8%BD%BD/</id>
+    <published>2020-07-15T02:24:17.000Z</published>
+    <updated>2020-07-15T09:08:32.943Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://okwzh.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mongodb" scheme="https://okwzh.cn/tags/mongodb/"/>
+    
+      <category term="数据库" scheme="https://okwzh.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="pymongo" scheme="https://okwzh.cn/tags/pymongo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;本地连接mongodb服务失败&#39;</title>
+    <link href="https://okwzh.cn/2020/07/15/Blog/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5mongodb%E6%9C%8D%E5%8A%A1%E5%A4%B1%E8%B4%A5/"/>
+    <id>https://okwzh.cn/2020/07/15/Blog/%E6%9C%AC%E5%9C%B0%E8%BF%9E%E6%8E%A5mongodb%E6%9C%8D%E5%8A%A1%E5%A4%B1%E8%B4%A5/</id>
+    <published>2020-07-15T01:00:25.000Z</published>
+    <updated>2020-07-15T09:08:26.782Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://okwzh.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mongodb" scheme="https://okwzh.cn/tags/mongodb/"/>
+    
+      <category term="数据库" scheme="https://okwzh.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;mongodb导入文件夹&#39;</title>
+    <link href="https://okwzh.cn/2020/07/14/Blog/mongodb%E5%AF%BC%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>https://okwzh.cn/2020/07/14/Blog/mongodb%E5%AF%BC%E5%85%A5%E6%96%87%E4%BB%B6%E5%A4%B9/</id>
+    <published>2020-07-14T14:31:19.000Z</published>
+    <updated>2020-07-15T09:08:30.292Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://okwzh.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mongodb" scheme="https://okwzh.cn/tags/mongodb/"/>
+    
+      <category term="数据库" scheme="https://okwzh.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;pymongo的使用&#39;</title>
+    <link href="https://okwzh.cn/2020/07/14/Blog/pymongo%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://okwzh.cn/2020/07/14/Blog/pymongo%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2020-07-14T14:24:58.000Z</published>
+    <updated>2020-07-15T09:08:39.299Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://okwzh.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mongodb" scheme="https://okwzh.cn/tags/mongodb/"/>
+    
+      <category term="数据库" scheme="https://okwzh.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="pymongo" scheme="https://okwzh.cn/tags/pymongo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;深拷贝与浅拷贝&#39;</title>
+    <link href="https://okwzh.cn/2020/07/14/Blog/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/"/>
+    <id>https://okwzh.cn/2020/07/14/Blog/%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D/</id>
+    <published>2020-07-14T13:04:23.000Z</published>
+    <updated>2020-07-14T14:11:20.066Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;mongodb的安装与增删改查&#39;</title>
+    <link href="https://okwzh.cn/2020/07/14/Blog/mongodb%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"/>
+    <id>https://okwzh.cn/2020/07/14/Blog/mongodb%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</id>
+    <published>2020-07-14T08:00:02.000Z</published>
+    <updated>2020-07-14T14:25:53.708Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="数据库" scheme="https://okwzh.cn/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="mongodb" scheme="https://okwzh.cn/tags/mongodb/"/>
+    
+      <category term="数据库" scheme="https://okwzh.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>&#39;python查找算法&#39;</title>
+    <link href="https://okwzh.cn/2020/07/13/Blog/python%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/"/>
+    <id>https://okwzh.cn/2020/07/13/Blog/python%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/</id>
+    <published>2020-07-13T12:22:03.000Z</published>
+    <updated>2020-07-13T13:35:48.879Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://okwzh.cn/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
+    
+      <category term="算法" scheme="https://okwzh.cn/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>&#39;python排序算法&#39;</title>
-    <link href="https://okwzh.cn/2020/07/12/Blog/python%E7%AE%97%E6%B3%95/"/>
-    <id>https://okwzh.cn/2020/07/12/Blog/python%E7%AE%97%E6%B3%95/</id>
+    <link href="https://okwzh.cn/2020/07/12/Blog/python%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <id>https://okwzh.cn/2020/07/12/Blog/python%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</id>
     <published>2020-07-12T14:22:27.000Z</published>
-    <updated>2020-07-13T02:54:23.888Z</updated>
+    <updated>2020-07-13T13:57:23.443Z</updated>
     
     <summary type="html">
     
@@ -52,7 +257,7 @@
     <link href="https://okwzh.cn/2020/07/11/Blog/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8E%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/"/>
     <id>https://okwzh.cn/2020/07/11/Blog/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8E%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</id>
     <published>2020-07-11T12:47:18.000Z</published>
-    <updated>2020-07-11T14:00:09.775Z</updated>
+    <updated>2020-07-16T07:32:55.314Z</updated>
     
     <summary type="html">
     
@@ -370,211 +575,6 @@
       <category term="django" scheme="https://okwzh.cn/tags/django/"/>
     
       <category term="celery" scheme="https://okwzh.cn/tags/celery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;hexo博客美化二&#39;</title>
-    <link href="https://okwzh.cn/2020/06/17/Blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%BA%8C/"/>
-    <id>https://okwzh.cn/2020/06/17/Blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%BA%8C/</id>
-    <published>2020-06-17T13:59:40.000Z</published>
-    <updated>2020-07-07T08:54:57.069Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://okwzh.cn/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://okwzh.cn/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;paypal跨境支付&#39;</title>
-    <link href="https://okwzh.cn/2020/06/17/Blog/paypal%E8%B7%A8%E5%A2%83%E6%94%AF%E4%BB%98/"/>
-    <id>https://okwzh.cn/2020/06/17/Blog/paypal%E8%B7%A8%E5%A2%83%E6%94%AF%E4%BB%98/</id>
-    <published>2020-06-17T02:00:58.000Z</published>
-    <updated>2020-07-07T09:00:07.599Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="支付" scheme="https://okwzh.cn/categories/%E6%94%AF%E4%BB%98/"/>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
-      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
-    
-      <category term="支付" scheme="https://okwzh.cn/tags/%E6%94%AF%E4%BB%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;hexo博客美化一&#39;</title>
-    <link href="https://okwzh.cn/2020/06/16/Blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B8%80/"/>
-    <id>https://okwzh.cn/2020/06/16/Blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B8%80/</id>
-    <published>2020-06-16T13:31:29.000Z</published>
-    <updated>2020-07-07T08:55:43.380Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://okwzh.cn/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://okwzh.cn/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;结合js做md5加密&#39;</title>
-    <link href="https://okwzh.cn/2020/06/16/Blog/%E7%BB%93%E5%90%88js%E5%81%9Amd5%E5%8A%A0%E5%AF%86/"/>
-    <id>https://okwzh.cn/2020/06/16/Blog/%E7%BB%93%E5%90%88js%E5%81%9Amd5%E5%8A%A0%E5%AF%86/</id>
-    <published>2020-06-16T09:48:47.000Z</published>
-    <updated>2020-07-07T09:05:23.584Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/categories/python/"/>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
-      <category term="vue" scheme="https://okwzh.cn/tags/vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;结合python实现支付宝支付功能&#39;</title>
-    <link href="https://okwzh.cn/2020/06/16/Blog/%E7%BB%93%E5%90%88python%E5%AE%9E%E7%8E%B0%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/"/>
-    <id>https://okwzh.cn/2020/06/16/Blog/%E7%BB%93%E5%90%88python%E5%AE%9E%E7%8E%B0%E6%94%AF%E4%BB%98%E5%AE%9D%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD/</id>
-    <published>2020-06-16T08:39:30.000Z</published>
-    <updated>2020-07-07T09:05:53.252Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="支付" scheme="https://okwzh.cn/categories/%E6%94%AF%E4%BB%98/"/>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
-      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
-    
-      <category term="支付" scheme="https://okwzh.cn/tags/%E6%94%AF%E4%BB%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;分布式ID雪花算法(snowflake)&#39;</title>
-    <link href="https://okwzh.cn/2020/06/14/Blog/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95-snowflake/"/>
-    <id>https://okwzh.cn/2020/06/14/Blog/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95-snowflake/</id>
-    <published>2020-06-14T09:43:19.000Z</published>
-    <updated>2020-07-07T09:09:04.645Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="https://okwzh.cn/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
-      <category term="django" scheme="https://okwzh.cn/tags/django/"/>
-    
-      <category term="算法" scheme="https://okwzh.cn/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;关于js数字过长出现的精度丢失问题&#39;</title>
-    <link href="https://okwzh.cn/2020/06/14/Blog/%E5%85%B3%E4%BA%8Ejs%E6%95%B0%E5%AD%97%E8%BF%87%E9%95%BF%E5%87%BA%E7%8E%B0%E7%9A%84%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/"/>
-    <id>https://okwzh.cn/2020/06/14/Blog/%E5%85%B3%E4%BA%8Ejs%E6%95%B0%E5%AD%97%E8%BF%87%E9%95%BF%E5%87%BA%E7%8E%B0%E7%9A%84%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/</id>
-    <published>2020-06-14T07:37:27.000Z</published>
-    <updated>2020-07-07T09:04:34.367Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="vue" scheme="https://okwzh.cn/categories/vue/"/>
-    
-    
-      <category term="vue" scheme="https://okwzh.cn/tags/vue/"/>
-    
-      <category term="js" scheme="https://okwzh.cn/tags/js/"/>
     
   </entry>
   
