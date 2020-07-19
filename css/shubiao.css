@@ -1,3 +1,28 @@
+/* 主页半透明度
+.layout_page {
+    opacity: 0.7;
+} */
+
+/* 取消页脚背景 */
+#footer {
+    background: none;
+}
+
+/* 头像点击特效 */
+.card-info-avatar:hover {
+    background: url(https://gitee.com/lovelijunyi/images/raw/master/20200530181856.gif);
+  }
+
+  /* 标签自定义颜色 */
+/* 分类 */
+.card-folder-animation {
+    color: rgba(107, 72, 255, 1);
+  }
+  /* 最近文章 */
+  .card-history-animation {
+    color: rgb(34, 218, 241);
+  }
+
 /* 鼠标特效 */
 body {
     cursor: url(https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@latest/Hexo/img/default.cur),
@@ -9,9 +34,10 @@ img {
         default;
 }
 
+
 /* 页脚footer */
 /* 渐变色滚动动画 */
-@-webkit-keyframes Gradient {
+/* @-webkit-keyframes Gradient {
     0% {
         background-position: 0 50%;
     }
@@ -68,7 +94,7 @@ img {
 }
 #footer:before {
     background-color: rgba(0, 0, 0, 0);
-}
+} */
 
 
 /* 滚动条 */
@@ -105,5 +131,28 @@ img {
 color: #fff;
 background-color: #49b1f5;
 }
+
+
+
+/* 阅读模式 */
+.read-mode {
+    /* 字体大小 */
+    font-size: 17px;
+    /* 可以在这里引入自定义字体，具体方法请自行百度css引入字体 */
+  }
+  .read-mode #web_bg {
+    /* 背景颜色 */
+    background: #fdf6e3;
+  }
+  
+  /* 隐藏按钮不消失 */
+  .hide-block>a.hide-button.open, .hide-inline>a.hide-button.open {
+    display: inline-block;
+  }
+  /* 用于修复隐藏按钮的hover问题 */
+  #article-container a:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 
