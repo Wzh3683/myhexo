@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>简单了解http发起请求到服务器返回响应的主要过程 | WZH's blog</title><meta name="description" content="用户输入url发起请求。 浏览器将url进行解析。先去找本地的hosts文件，判断文件是否有对应的域名和IP，有向其IP发送请求。没有将domain(域)发给dns(域名服务器)进行解析。将域名解析对应的服务器IP地址，发回给浏览器。 浏览器拿到服务器IP地址，开始socket建立TCP链接（三次握手） TCP链接建立，发起HTTP请求。使用get或post等方法发起网络通信。 服务器接受请求并"><meta name="keywords" content="协议"><meta name="author" content="Mr.Wang,okwzh3683@gmail.com"><meta name="copyright" content="Mr.Wang"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/Hexo%E4%B8%BB%E9%A2%98%E5%9B%BE%E7%89%87/timg.jpg"><link rel="canonical" href="https://okwzh.cn/2020/08/01/Blog/%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3http%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%94%E5%9B%9E%E5%93%8D%E5%BA%94%E7%9A%84%E4%B8%BB%E8%A6%81%E8%BF%87%E7%A8%8B/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="简单了解http发起请求到服务器返回响应的主要过程"><meta property="og:url" content="https://okwzh.cn/2020/08/01/Blog/%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3http%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%94%E5%9B%9E%E5%93%8D%E5%BA%94%E7%9A%84%E4%B8%BB%E8%A6%81%E8%BF%87%E7%A8%8B/"><meta property="og:site_name" content="WZH's blog"><meta property="og:description" content="用户输入url发起请求。 浏览器将url进行解析。先去找本地的hosts文件，判断文件是否有对应的域名和IP，有向其IP发送请求。没有将domain(域)发给dns(域名服务器)进行解析。将域名解析对应的服务器IP地址，发回给浏览器。 浏览器拿到服务器IP地址，开始socket建立TCP链接（三次握手） TCP链接建立，发起HTTP请求。使用get或post等方法发起网络通信。 服务器接受请求并"><meta property="og:image" content="https://ae01.alicdn.com/kf/H55e85a147cd542a196a0c3d9196048fet.jpg"><meta property="article:published_time" content="2020-08-01T02:06:39.000Z"><meta property="article:modified_time" content="2020-08-24T01:21:18.229Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
+
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
+
+var autoChangeMode = 'true'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><link rel="prev" title="Centos7添加中文输入法" href="https://okwzh.cn/2020/08/24/Centos7%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/"><link rel="next" title="常用四种列表推导式" href="https://okwzh.cn/2020/07/25/Blog/%E5%B8%B8%E7%94%A8%E5%9B%9B%E7%A7%8D%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容:${query}"}},
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  bookmark: {
+    message_prev: '按',
+    message_next: '键将本页加入书签'
+  },
+  runtime_unit: '天',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: {"bookmark":{"message_prev":"按","message_next":"键将本页加入书签"},"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-center"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: false,
+  postUpdate: '2020-08-24 09:21:18'
+}</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><link rel="stylesheet" href="/css/shubiao.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/flink.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sviptzk/HexoStaticFile@master/Hexo/css/iconfont.min.css"><link rel="stylesheet" href="/css/iconfont1.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome-animation@0.2.1/dist/font-awesome-animation.min.css"><link rel="stylesheet" href="font-awesome-animation.min.css"><link rel="stylesheet" href="/css/background.css"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://ae01.alicdn.com/kf/He97068b51c9b4b478cc06b29d9224259E.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">文章</div><div class="length_num">58</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">标签</div><div class="length_num">27</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">分类</div><div class="length_num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home faa-wrench animated"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive faa-flash animated"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags faa-pulse animated"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open faa-bounce animated"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link faa-passing animated"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart faa-pulse animated"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments faa-horizontal animated"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music faa-ring animated"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video faa-burst animated"></i><span> 电影</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw fas fa-gamepad faa-bounce animated"></i><span> 游戏</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book faa-spin animated"></i><span> 阅读</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-camera faa-falling animated"></i><span> 照片墙</span></a></li><li><a class="site-page" href="https://www.itrhx.com/box/" target="_blank" rel="noopener"><i class="fa-fw fas fa-briefcase faa-rising animated"></i><span> 百宝箱</span></a></li></ul></div></div></div></div><div id="body-wrap"><div id="web_bg" data-type="photo"></div><header class="post-bg" id="page-header" style="background-image: url(https://ae01.alicdn.com/kf/H55e85a147cd542a196a0c3d9196048fet.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">WZH's blog</a></span><span class="pull-right menus"><div id="search_button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home faa-wrench animated"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive faa-flash animated"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags faa-pulse animated"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open faa-bounce animated"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link faa-passing animated"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart faa-pulse animated"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments faa-horizontal animated"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music faa-ring animated"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video faa-burst animated"></i><span> 电影</span></a></li><li><a class="site-page" href="/games/"><i class="fa-fw fas fa-gamepad faa-bounce animated"></i><span> 游戏</span></a></li><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book faa-spin animated"></i><span> 阅读</span></a></li><li><a class="site-page" href="/photo/"><i class="fa-fw fas fa-camera faa-falling animated"></i><span> 照片墙</span></a></li><li><a class="site-page" href="https://www.itrhx.com/box/" target="_blank" rel="noopener"><i class="fa-fw fas fa-briefcase faa-rising animated"></i><span> 百宝箱</span></a></li></ul></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">简单了解http发起请求到服务器返回响应的主要过程</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="发表于 2020-08-01 10:06:39"><i class="far fa-calendar-alt fa-fw"></i> 发表于 2020-08-01</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="更新于 2020-08-24 09:21:18"><i class="fas fa-history fa-fw"></i> 更新于 2020-08-24</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fas fa-inbox fa-fw post-meta__icon"></i><a class="post-meta__categories" href="/categories/TCP-IP%E5%8D%8F%E8%AE%AE/">TCP/IP协议</a></span></div><div class="meta-secondline"> <span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta__icon"></i><span>字数总计:</span><span class="word-count">672</span><span class="post-meta__separator">|</span><i class="far fa-clock fa-fw post-meta__icon"></i><span>阅读时长: 2 分钟</span></span></div><div class="meta-thirdline"><span class="post-meta-pv-cv"><span class="post-meta__separator">|</span><i class="far fa-eye fa-fw post-meta__icon"></i><span>阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><ol>
+<li>用户输入url发起请求。</li>
+<li>浏览器将url进行解析。先去找本地的hosts文件，判断文件是否有对应的域名和IP，有向其IP发送请求。没有将domain(域)发给dns(域名服务器)进行解析。将域名解析对应的服务器IP地址，发回给浏览器。<br><img src="https://note.youdao.com/yws/public/resource/30278e0a7b44119f76d6ccca9d6a46e4/xmlnote/F5B314BEA92043D48B97D328FF4B6ED0/440" alt=""></li>
+<li>浏览器拿到服务器IP地址，开始socket建立TCP链接（三次握手）</li>
+<li>TCP链接建立，发起HTTP请求。使用get或post等方法发起网络通信。</li>
+<li>服务器接受请求并返回相应的文件。</li>
+<li>浏览器接收响应并显示内容。</li>
+<li>四次挥手关闭连接。</li>
+</ol>
+<p>现代浏览器在与服务器建立了一个 TCP 连接后是否会在一个 HTTP 请求完成后断开?什么情况下会断开?</p>
+<div class="note info">
+            <p>在 HTTP 1.0 中，一个服务器在发送完一个 HTTP 响应后，会断开 TCP 连接。但是这样每次请求都会重新建立和断开 TCP 连接，代价过大。<br>某些服务器对 Connection: keep-alive 的 Header 进行了支持。<br>意思是说，完成这个 HTTP 请求之后，不要断开 HTTP 请求使用的 TCP 连接。<br>这样的好处是连接可以被重新使用，之后发送 HTTP 请求的时候不需要重新建立 TCP 连接.<br>持久链接：HTTP 1.1 就把 Connection 头写进标准，并且默认开启持久连接。除非请求中写明 Connection：close，那么浏览器和服务器之间是会维持一段时间的 TCP 连接，不会一个请求结束就断掉。<br>默认情况下建立 TCP 连接不会断开，只有在请求报头中声明 Connection：close 才会在请求完成后关闭连接。</p>
+          </div>
+
+
+<p>一个 TCP 连接可以对应几个 HTTP 请求?</p>
+<div class="note info">
+            <p>在我们了解第一个问题之后，我们已经有了答案，就是一个TCP链接可以发送多个HTTP请求。</p>
+          </div>
+
+
+<p>一个 TCP 连接中 HTTP 请求发送可以一起发送么(比如一起发三个请求，再三个响应一起接收)?</p>
+<div class="note info">
+            <p>在 HTTP 1.1 存在 Pipelining 技术可以完成这个多个请求同时发送，但是由于浏览器默认关闭，所以可以认为这是不可行的。<br>在 HTTP2 中由于 Multiplexing 特点的存在，多个 HTTP 请求可以在同一个 TCP 连接中并行进行。</p>
+          </div>
+
+<p>HTTP 1.1 时代，浏览器是如何提高页面加载效率的呢?</p>
+<div class="note info">
+            <p>维持和服务器已经建立的 TCP 连接，在同一连接上顺序处理多个请求。<br>和服务器建立多个 TCP 连接。</p>
+          </div>
+
+
+<p>转载于：<a href="https://network.51cto.com/art/201912/608099.htm" target="_blank" rel="noopener">https://network.51cto.com/art/201912/608099.htm</a></p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:okwzh3683@gmail.com">Mr.Wang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://okwzh.cn/2020/08/01/Blog/%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3http%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%94%E5%9B%9E%E5%93%8D%E5%BA%94%E7%9A%84%E4%B8%BB%E8%A6%81%E8%BF%87%E7%A8%8B/">https://okwzh.cn/2020/08/01/Blog/%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3http%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%94%E5%9B%9E%E5%93%8D%E5%BA%94%E7%9A%84%E4%B8%BB%E8%A6%81%E8%BF%87%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://okwzh.cn" target="_blank">WZH's blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8D%8F%E8%AE%AE/">协议</a></div><div class="post_share"><div class="social-share" data-image="https://ae01.alicdn.com/kf/H55e85a147cd542a196a0c3d9196048fet.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><button class="reward-button" type="button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechat.jpg" alt="wechat" onclick="window.open('/img/wechat.jpg')"/><div class="post-qr-code__desc">wechat</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="alipay" onclick="window.open('/img/alipay.jpg')"/><div class="post-qr-code__desc">alipay</div></li></ul></div></button></div><br><br><html><body><div id="wpac-rating" align="center"></div><script type="text/javascript">wpac_init = window.wpac_init || [];
+wpac_init.push({widget: 'Rating', id: 26102});  //- 这里将xxxxx改成自己的id
+(function() {
+if ('WIDGETPACK_LOADED' in window) return;
+WIDGETPACK_LOADED = true;
+var mc = document.createElement('script');
+mc.type = 'text/javascript';
+mc.async = true;
+mc.src = 'https://embed.widgetpack.com/widget.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+})();
+//- 下面的那行小字 如果你不需要可以把17~21行注释掉</script><div id="copy" align="center">ღ喜欢记得五星好评哦~</div></body></html><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/08/24/Centos7%E6%B7%BB%E5%8A%A0%E4%B8%AD%E6%96%87%E8%BE%93%E5%85%A5%E6%B3%95/"><img class="prev-cover" src="https://ae01.alicdn.com/kf/H8ee5fa367f8f4a93b6a1a4884e5103beF.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Centos7添加中文输入法</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/25/Blog/%E5%B8%B8%E7%94%A8%E5%9B%9B%E7%A7%8D%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F/"><img class="next-cover" src="https://ae01.alicdn.com/kf/Hb86c08041b964c7f88d86fc3d7734b91T.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">常用四种列表推导式</div></div></a></div></nav><div class="relatedPosts"><div class="relatedPosts_headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts_list"><div class="relatedPosts_item"><a href="/2020/06/08/Blog/HTTP协议和HTTPS协议/" title="'HTTP协议和HTTPS协议'"><img class="relatedPosts_cover" src="https://ae01.alicdn.com/kf/He3e8d640d0ab4fe69caaacfcfd6badc74.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-08</div><div class="relatedPosts_title">'HTTP协议和HTTPS协议'</div></div></a></div><div class="relatedPosts_item"><a href="/2020/07/11/Blog/三次握手与四次挥手/" title="'三次握手与四次挥手'"><img class="relatedPosts_cover" src="https://ae01.alicdn.com/kf/Hba6fe0568fbc494ca8bdf2392568ee2dW.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-07-11</div><div class="relatedPosts_title">'三次握手与四次挥手'</div></div></a></div><div class="relatedPosts_item"><a href="/2020/06/08/Blog/响应状态码/" title="'响应状态码和请求方法'"><img class="relatedPosts_cover" src="https://ae01.alicdn.com/kf/H69ee6336087c4f01b340701b4470b679c.jpg"><div class="relatedPosts_main is-center"><div class="relatedPosts_date"><i class="far fa-calendar-alt fa-fw"></i> 2020-06-08</div><div class="relatedPosts_title">'响应状态码和请求方法'</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headling"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div class="comments-items-1" data-name="Valine"><div class="vcomment" id="vcomment"></div><script>function loadvaline () {  
+  var requestSetting = function (from,set) {
+    var from = from
+    var setting = set.split(',').filter(function(item){
+    return from.indexOf(item) > -1
+    });
+    setting = setting.length == 0 ? from :setting;
+    return setting
+  }
+
+  var guestInfo = requestSetting(['nick','mail','link'],'nick,mail,link')
+  var requiredFields = requestSetting(['nick','mail'],'nick,mail')
+
+  function initValine () {
+    window.valine = new Valine({
+      el:'#vcomment',
+      appId: 'NXH07QqogzUxgT3WQU064j9D-gzGzoHsz',
+      appKey: 'f5oGTt9f5pG96B9r6uTngiGh',
+      placeholder: '记得留下你的暱称和邮箱....可以快速收到回復',
+      avatar: 'monsterid',
+      meta: guestInfo,
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      requiredFields: requiredFields
+    });
+  }
+  loadScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js', initValine)
+}
+
+if ('Valine' === 'Valine' || false) {
+  window.addEventListener('load', loadvaline)
+}
+else {
+  function loadOtherComment () {
+    loadvaline()
+  }
+}</script></div></div></div></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Mr.Wang</div><div id="running-time"></div><script>setInterval(()=>{let create_time=Math.round(new Date(Date.UTC(2020,01,03,0,0,0)).getTime()/1000);let timestamp=Math.round((new Date().getTime()+8*60*60*1000)/1000);let second=timestamp-create_time;let time=new Array(0,0,0,0,0);if(second>=365*24*3600){time[0]=parseInt(second/(365*24*3600));second%=365*24*3600;}if(second>=24*3600){time[1]=parseInt(second/(24*3600));second%=24*3600;}if(second>=3600){time[2]=parseInt(second/3600);second%=3600;}if(second>=60){time[3]=parseInt(second/60);second%=60;}if(second>0){time[4]=second;}currentTimeHtml='小窝已舒适的度过了 '+time[0]+' 年 '+time[1]+' 天 '+time[2]+' 时 '+time[3]+' 分 '+time[4]+' 秒';document.getElementById("running-time").innerHTML=currentTimeHtml;},1000);
+
+</script></div><head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="WZH's blog" type="application/atom+xml">
+</head><div class="container" id="jsi-flying-fish-container"></div><script src="/js/fish.js"></script><style>@media only screen and (max-width: 747px){
+#sidebar_search_box input[type=text]{width:calc(100% - 24px)}
+}</style></footer></div><section id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font_plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font_minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></section><div class="search-dialog" id="local-search"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"><div id="local-hits"></div><div id="local-stats"><div class="local-search-stats__hr" id="hr"><span>由</span> <a href="https://github.com/wzpan/hexo-generator-search" target="_blank" rel="noopener" style="color:#49B1F5;">hexo-generator-search</a>
+ <span>提供支持</span></div></div></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div class="search-mask"></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+document.body.addEventListener('input', POWERMODE);
+</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="/js/third-party/click_heart.js"></script><script src="/js/search/local-search.js"></script><script src="/js/calendar.js"></script><script src="/js/languages.js"></script><script src="/js/fish.js"></script><script src="/js/classify.js"></script><script src="/js/adaovoice.js"></script><script src="https://myhkw.cn/player/js/player.js" id="myhk" key="15953320518" m="1"></script></body></html>
