@@ -1,20 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>WZH&#39;s blog</title>
+  <title>兜兜有糖</title>
   <icon>https://okwzh.cn/icon.png</icon>
-  <subtitle>12312312</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://okwzh.cn/"/>
-  <updated>2020-08-24T02:24:10.037Z</updated>
+  <updated>2021-08-26T01:06:01.252Z</updated>
   <id>https://okwzh.cn/</id>
   
   <author>
-    <name>Mr.Wang</name>
+    <name>兜兜有糖</name>
     <email>okwzh3683@gmail.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>chrome音乐插件</title>
+    <link href="https://okwzh.cn/2021/08/26/chrome%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/"/>
+    <id>https://okwzh.cn/2021/08/26/chrome%E9%9F%B3%E4%B9%90%E6%8F%92%E4%BB%B6/</id>
+    <published>2021-08-26T00:34:01.000Z</published>
+    <updated>2021-08-26T01:06:01.252Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>软终端介绍</title>
+    <link href="https://okwzh.cn/2021/08/25/%E8%BD%AF%E7%BB%88%E7%AB%AF%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://okwzh.cn/2021/08/25/%E8%BD%AF%E7%BB%88%E7%AB%AF%E4%BB%8B%E7%BB%8D/</id>
+    <published>2021-08-25T06:15:48.000Z</published>
+    <updated>2021-08-25T07:16:30.119Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="IPTV" scheme="https://okwzh.cn/tags/IPTV/"/>
+    
+  </entry>
   
   <entry>
     <title>Centos7添加中文输入法</title>
@@ -211,9 +259,9 @@
       <category term="docker" scheme="https://okwzh.cn/categories/docker/"/>
     
     
-      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
       <category term="docker" scheme="https://okwzh.cn/tags/docker/"/>
+    
+      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
     
       <category term="flask" scheme="https://okwzh.cn/tags/flask/"/>
     
@@ -535,60 +583,6 @@
     
     
       <category term="vim" scheme="https://okwzh.cn/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;在线客服系统-基于flask+vue+socket.io实现在线客服系统&#39;</title>
-    <link href="https://okwzh.cn/2020/06/28/Blog/%E5%9C%A8%E7%BA%BF%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F-%E5%9F%BA%E4%BA%8Eflask-vue%E9%9B%86%E6%88%90%E9%A1%B9%E7%9B%AE/"/>
-    <id>https://okwzh.cn/2020/06/28/Blog/%E5%9C%A8%E7%BA%BF%E5%AE%A2%E6%9C%8D%E7%B3%BB%E7%BB%9F-%E5%9F%BA%E4%BA%8Eflask-vue%E9%9B%86%E6%88%90%E9%A1%B9%E7%9B%AE/</id>
-    <published>2020-06-28T08:52:56.000Z</published>
-    <updated>2020-07-07T00:39:36.835Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;socket-io介绍&quot;&gt;&lt;a href=&quot;#socket-io介绍&quot; class=&quot;headerlink&quot; title=&quot;socket.io介绍&quot;&gt;&lt;/a&gt;socket.io介绍&lt;/h3&gt;&lt;p&gt;Socket.IO 就是一个封装了 Websocket、基于 Node 的 JavaScript 框架，包含 client 的 JavaScript 和 server 的 Node（现在也支持python,go lang等语言）。其屏蔽了所有底层细节，让顶层调用非常简单，另外，Socket.IO 还有一个非常重要的好处。其不仅支持 WebSocket，还支持许多种轮询机制以及其他实时通信方式，并封装了通用的接口。这些方式包含 Adobe Flash Socket、Ajax 长轮询、Ajax multipart streaming 、持久 Iframe、JSONP 轮询等。
-    
-    </summary>
-    
-    
-      <category term="flask" scheme="https://okwzh.cn/categories/flask/"/>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
-      <category term="flask" scheme="https://okwzh.cn/tags/flask/"/>
-    
-      <category term="websocket" scheme="https://okwzh.cn/tags/websocket/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>&#39;flask第二弹——cookie和session&#39;</title>
-    <link href="https://okwzh.cn/2020/06/26/Blog/flask%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%94%E2%80%94cookie%E5%92%8Csession/"/>
-    <id>https://okwzh.cn/2020/06/26/Blog/flask%E7%AC%AC%E4%BA%8C%E5%BC%B9%E2%80%94%E2%80%94cookie%E5%92%8Csession/</id>
-    <published>2020-06-26T09:56:48.000Z</published>
-    <updated>2020-06-26T10:01:31.148Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="flask" scheme="https://okwzh.cn/categories/flask/"/>
-    
-    
-      <category term="python" scheme="https://okwzh.cn/tags/python/"/>
-    
-      <category term="flask" scheme="https://okwzh.cn/tags/flask/"/>
     
   </entry>
   
